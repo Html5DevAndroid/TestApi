@@ -1,0 +1,28 @@
+
+.add-channel {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.authorize-btn-div {
+	display: flex;
+    justify-content: center;
+}
+
+.channel-frame {
+	border: 1px solid grey;
+	padding: 10px;
+}
+
+.channel-row {
+	display: flex;
+	align-items: center;
+}
+
+.channel-p {
+	margin: 0px;
+}
+
+.channel-list-close {
+	margin-right: 15px;
+}
