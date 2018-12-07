@@ -19,6 +19,6 @@ if (! isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
   add_json_channel($_SESSION["channel_name"], json_encode($client->getAccessToken()));
   unset($_SESSION["channel_name"]);
-  $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php';
+  $redirect_uri = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php';
   header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
 }

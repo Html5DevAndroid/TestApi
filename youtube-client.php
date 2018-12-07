@@ -10,7 +10,7 @@ function create_google_client($redirect_path = 'oauth2callback.php') {
 	$client->setApprovalPrompt('force');
 	$client->setIncludeGrantedScopes(true);
 		
-	$client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/' . $redirect_path);
+	$client->setRedirectUri('https://' . $_SERVER['HTTP_HOST'] . '/' . $redirect_path);
 	
 	return $client;
 }
