@@ -10,8 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = json_decode(file_get_contents('php://input'));
 	
 	set_time_limit(0);
-	file_put_contents("./video/".$content->name, fopen($content->url, 'r'));
-	echo 'ok';
+	$f = file_put_contents("./video/".$content->name, fopen($content->url, 'r'));
+	if ($f) echo 'ok';
+	else print 'error';
 }
 
 ?>
