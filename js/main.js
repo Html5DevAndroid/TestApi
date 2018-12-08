@@ -76,10 +76,9 @@ function triggerModalShow(id) {
 		
 		if(id == "listVideoModal") {
 			$('.video-up').on('click', function() {
-				var id = $(this).attr("id");
-				id = id.replace(/\D/g,'');
 				var name = $('#video-name').val();
-				var file = $('#video-file').val();
+				var file = $(this).attr("id");
+				alert(name + " fsdf " + file);
 				if(name == null || name == "") {
 					alert('Input Cannot Be Empty');
 				}else {
@@ -95,7 +94,6 @@ function triggerModalShow(id) {
 			$('.remove-video').on('click', function() {
 				var id = $(this).attr("id");
 				id = id.replace(/\D/g,'');
-				alert(id);
 				var json = {
 					id : id,
 					type: 'remove-video'
