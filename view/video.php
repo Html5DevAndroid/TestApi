@@ -13,11 +13,11 @@ function video_view() {
 	<?php 
 	
 	for($i=0; $i<count($videos); $i++) {		
-		video_item($videos[$i]);
+		video_item($videos[$i], $i);
 	}
 }
 
-function video_item($video) {
+function video_item($video, $id) {
 	?>
 	
 	<div>
