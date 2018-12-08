@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 	
 	if($content->type == 'remove-video') {
+		die($content->file);
 		if(unlink('./video' . $content->file) {
 			die('ok');
 		}else {
