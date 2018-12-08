@@ -11,7 +11,7 @@ $tokens = get_json_channel();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = json_decode(file_get_contents('php://input'));
 	
-	echo json_encode($content);
+	echo $content->type;
 }
 
 function validate_token($stt, $token) {
