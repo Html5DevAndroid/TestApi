@@ -88,22 +88,7 @@ function triggerModalShow(id) {
 						  $('#logging-listVideoModal').append(response);
 					});
 				}
-			});
-			
-			$('.remove-video').on('click', function() {
-				var id = $(this).attr("id");
-				var json = {
-					file : id,
-					type: 'remove-video'
-				}
-				$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-					if(response == 'ok') {
-						location.reload(true);
-					}else {
-						$('#logging-listVideoModal').append(response);
-					}
-				});
-			});
+			});			
 		}
 		
 	});

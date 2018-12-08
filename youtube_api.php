@@ -45,8 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		
 		for($i=0; $i<count($arr); $i++) {
 			$token = $tokens[$arr[$i]];
-			//upload_video($arr[$i], $token, $content->name, $content->file);
-			echo json_encode($content);
+			upload_video($arr[$i], $token, $content->name, $content->file);
 		}
 	}
 	

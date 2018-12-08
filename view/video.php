@@ -20,20 +20,11 @@ function video_view() {
 function video_item($video) {
 	?>
 	
-	<div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-1">
-					<button id="<?php echo $video ?>" type="button" class="close remove-video">&times;</button>
-				</div>
-				<div class="col-xs-11 channel-row">
-					<button id="<?php echo $video ?>" type="button" class="btn btn-warning video-up">Up</button>
-					<span style="display:inline-block; width: 50px;"></span>
-					<p id="video-file" class="channel-p"><?php echo $video ?></p>
-				</div>
-				<br>
-			</div>
-		</div>
+	<div class="channel-row">
+		<button id="<?php echo $video ?>" type="button" class="btn btn-warning video-up">Up</button>
+		<span style="display:inline-block; width: 50px;"></span>
+		<p class="channel-p"><?php echo $video ?></p>
+		<br>
 	</div>
 	
 	<?php
