@@ -1,6 +1,5 @@
 <?php
 
-/*
 function get_json_channel() {
 	$contents = get_content();
 	
@@ -38,7 +37,6 @@ function delete_json_channel($id) {
 	array_splice($contents, $id, 1);
 	put_content(json_encode($contents));
 }
-*/
 
 function get_content() {
 	return file_get_contents('https://api.myjson.com/bins/n7mim');
