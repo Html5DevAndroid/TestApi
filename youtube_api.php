@@ -45,17 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		
 		for($i=0; $i<count($arr); $i++) {
 			$token = $tokens[$arr[$i]];
-			upload_video($arr[$i], $token, $content->name, $content->file);
+			//upload_video($arr[$i], $token, $content->name, $content->file);
+			echo json_encode($content);
 		}
 	}
 	
 	if($content->type == 'remove-channel') {
 		delete_json_channel($content->id);
-		echo('ok');
-	}
-	
-	if($content->type == 'remove-video') {
-		echo json_encode($content);
+		echo 'ok';
 	}
 }
 
