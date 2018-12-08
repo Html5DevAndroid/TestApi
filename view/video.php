@@ -1,7 +1,8 @@
 <?php 
 
 function video_view() { 
-	$videos = array_diff( scandir("./video"), array(".", "..") );
+	$videos = scandir("./video");
+	$videos = array_splice($videos, 0, 2);
 	?>
 	
 	<label for="usr">Tên Youtube</label>
