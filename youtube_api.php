@@ -54,7 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		echo('ok');
 	}
 	
-	
+	if($content->type == 'remove-video') {
+		echo json_encode($content);
+	}
 }
 
 function validate_token($stt, $token) {
