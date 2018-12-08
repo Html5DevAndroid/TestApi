@@ -1,10 +1,6 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	if (!is_dir('./video')) {
-	  mkdir('./video', 0777, true);
-	}
-	
 	$files = glob('./video/*'); // get all file names
 	foreach($files as $file){ // iterate files
 	  if(is_file($file))
