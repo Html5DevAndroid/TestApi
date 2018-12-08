@@ -37,6 +37,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 	}
 	
+	if($content->type == 'upload') {
+		$arr = $content->indexes;
+		if(count($arr) == 0) {
+			echo 'No Channel Selected';
+		}
+		
+		for($i=0; $i<count($arr); $i++) {
+			$token = $tokens[$arr[$i]];
+			upload_video($arr[$i], $token, $content->name, $content->file);
+		}
+	}
+	
 	
 }
 
