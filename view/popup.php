@@ -15,6 +15,8 @@ function create_popup($title, $body, $id) {
 		  </div>
 		  <div class="modal-body">
 			<?php echo $body(); ?>
+			<br>
+			<br>
 			<div id="logging-<?php echo $id ?>"></div>
 		  </div>
 		  <div class="modal-footer">
