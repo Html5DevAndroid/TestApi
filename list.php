@@ -21,7 +21,7 @@ for($i=0; $i<count($tokens); $i++) {
 	try {
 	
 		$youtube = new Google_Service_YouTube($client);
-		$channel = $youtube->channels->channels.listlist('id', {mine: true});
+		$channel = $youtube->channels->list('id', {mine: true});
 		echo json_encode($channel);
 		echo '<br><br>';
 	
