@@ -5,6 +5,7 @@
 	require_once  './view/playlist.php';
 	require_once  './view/subscription.php';
 	require_once  './view/upload.php';
+	require_once  './view/video.php';
 	require_once  'connector.php';
 ?>
 
@@ -29,6 +30,7 @@
 		<div class="row add-channel">
 			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addChannelModal">Add Channel</button>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadVideoModal">Upload Video</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#listVideoModal">List Video</button>
 			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#playlistModal">Create Playlist</button>
 			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#subscribeModal">Subscribe Channel</button>
 			<?php 
@@ -36,6 +38,7 @@
 				create_popup('Subscribe A Channel', 'subscribe_view', 'subscribeModal');
 				create_popup('Create A Playlist', 'playlist_view', 'playlistModal');
 				create_popup('Upload A Video', 'upload_view', 'uploadVideoModal');
+				create_popup('List Video', 'video_view', 'listVideoModal');
 			?>
 		</div>
 		
