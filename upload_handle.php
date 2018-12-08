@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = json_decode(file_get_contents('php://input'));
 	
 	set_time_limit(0);
-	$f = file_put_contents("video/".$content->name, fopen($content->url, 'r'));
-	if ($f) echo 'ok';
+	$f = file_put_contents("./video/abc.xyz", "sadfsdfsdfsdfsdfsdf");
+	if ($f) echo file_get_contents("./video/abc.xyz");
 	else echo 'error';
 }
 
