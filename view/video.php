@@ -1,7 +1,7 @@
 <?php 
 
 function video_view() { 
-	$videos = scandir('./video'); 
+	$videos = array_diff( scandir("./video"), array(".", "..") );
 	?>
 	
 	<label for="usr">Tên Youtube</label>
@@ -20,9 +20,9 @@ function video_item($video) {
 	?>
 	
 	<div class="channel-row">
-		<p class="channel-p"><?php echo $video ?></p>
-		<span style="display:inline-block; width: 15px;"></span>
 		<button type="button" class="btn btn-warning">Up</button>
+		<span style="display:inline-block; width: 50px;"></span>
+		<p class="channel-p"><?php echo $video ?></p>
 		<br>
 	</div>
 	
