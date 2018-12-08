@@ -49,6 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 	}
 	
+	if($content->type == 'remove-channel') {
+		delete_json_channel($content->id);
+		echo('ok');
+	}
+	
 	
 }
 
