@@ -2,7 +2,7 @@
 
 function video_view() { 
 	$videos = scandir("./video");
-	$videos = array_splice($videos, 0, 2);
+	array_splice($videos, 0, 2);
 	?>
 	
 	<label for="usr">Tên Youtube</label>
