@@ -6,6 +6,7 @@ function create_google_client($redirect_path = 'oauth2callback.php') {
 	$client->setAuthConfig('client_secrets.json');
 	$client->addScope("https://www.googleapis.com/auth/youtubepartner");
 	$client->addScope("https://www.googleapis.com/auth/youtube.upload");
+	$client->addScope("https://www.googleapis.com/auth/youtubepartner-channel-audit");
 	$client->setAccessType('offline');
 	$client->setApprovalPrompt('force');
 	$client->setIncludeGrantedScopes(true);
