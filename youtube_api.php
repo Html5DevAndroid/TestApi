@@ -4,6 +4,8 @@ require_once 'youtube-client.php';
 
 session_start();
 
+die('dkm');
+
 $client = create_google_client();
  
 $tokens = get_json_channel();
