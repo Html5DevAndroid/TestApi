@@ -11,7 +11,21 @@ $tokens = get_json_channel();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = json_decode(file_get_contents('php://input'));
 	
-	echo $content->type;
+	
+	
+	if($content->type == 'subscribe') {
+		$arr = $content->indexes;
+		if(count($arr) == 0) {
+			echo 'No Channel Selected';
+		}
+		
+		for($i=0; $i<count($arr); $i++) {
+			$token = $tokens[$arr[$i]];
+			subscribe($arr[$i], $token, $content->channel);
+		}
+	}
+	
+	
 }
 
 function validate_token($stt, $token) {
