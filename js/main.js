@@ -89,6 +89,20 @@ function triggerModalShow(id) {
 					});
 				}
 			});
+			
+			$('#remove-video').on('click', function() {
+				var id = $(this).attr("id");
+				id = id.replace(/\D/g,'');
+				var json = {
+					id : id,
+					type: 'remove-video'
+				}
+				$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
+					if(response == 'ok') {
+						location.reload(true);
+					}
+				});
+			});
 		}
 		
 	});

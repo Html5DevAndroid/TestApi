@@ -53,6 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		delete_json_channel($content->id);
 		die('ok');
 	}
+	
+	if($content->type == 'remove-channel') {
+		$videos = scandir("./video");
+		array_splice($videos, 0, 2);
+		if(unlink($video[$content->id])) {
+			die('ok');
+		}else {
+			die('error');
+		}
+	}
 }
 
 function validate_token($stt, $token) {

@@ -24,6 +24,7 @@ function video_item($video) {
 		<button id="video-up" type="button" class="btn btn-warning">Up</button>
 		<span style="display:inline-block; width: 50px;"></span>
 		<p id="video-file" class="channel-p"><?php echo $video ?></p>
+		<button id="remove-video-<?php echo $id ?>" type="button" class="close remove-video">&times;</button>
 		<br>
 	</div>
 	
