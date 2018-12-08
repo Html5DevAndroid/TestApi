@@ -20,10 +20,10 @@ function video_view() {
 function video_item($video) {
 	?>
 	
-	<div class="channel-row">
+	<div>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-5">
+				<div class="col-xs-5 class="channel-row">
 					<button id="video-up" type="button" class="btn btn-warning">Up</button>
 					<span style="display:inline-block; width: 50px;"></span>
 					<p id="video-file" class="channel-p"><?php echo $video ?></p>

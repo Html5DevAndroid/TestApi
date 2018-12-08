@@ -90,7 +90,7 @@ function triggerModalShow(id) {
 				}
 			});
 			
-			$('#remove-video').on('click', function() {
+			$('.remove-video').on('click', function() {
 				var id = $(this).attr("id");
 				id = id.replace(/\D/g,'');
 				var json = {
