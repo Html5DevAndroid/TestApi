@@ -23,12 +23,10 @@ function video_item($video) {
 	<div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-10 channel-row">
-					<button id="video-up" type="button" class="btn btn-warning">Up</button>
+				<div class="col-xs-12 channel-row">
+					<button id="video-up-<?php echo $id ?>" type="button" class="btn btn-warning video-up">Up</button>
 					<span style="display:inline-block; width: 50px;"></span>
 					<p id="video-file" class="channel-p"><?php echo $video ?></p>
-				</div>
-				<div class="col-xs-2">
 					<button id="remove-video-<?php echo $id ?>" type="button" class="close remove-video">&times;</button>
 				</div>
 				<br>
