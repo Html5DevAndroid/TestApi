@@ -92,9 +92,8 @@ function triggerModalShow(id) {
 			
 			$('.remove-video').on('click', function() {
 				var id = $(this).attr("id");
-				alert(id);
 				var json = {
-					id : id,
+					file : id,
 					type: 'remove-video'
 				}
 				$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 

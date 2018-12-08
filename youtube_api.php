@@ -54,10 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		die('ok');
 	}
 	
-	if($content->type == 'remove-channel') {
-		$videos = scandir("./video");
-		array_splice($videos, 0, 2);
-		if(unlink($video[$content->id])) {
+	if($content->type == 'remove-video') {
+		if(unlink('./video' . $content->file) {
 			die('ok');
 		}else {
 			die('error');
