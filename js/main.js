@@ -62,8 +62,7 @@ function triggerModalShow(id) {
 					}
 					$.post(window.location.origin + "/upload_handle.php", JSON.stringify(obj), function(response){ 
 						  if(response == 'ok') {
-							  $('#upload-download').hide();
-							  $('#upload-upload').show();
+							  $('#upload-download').html("Download");
 						  }else {
 							  $('#upload-download').html("Download Failed");
 						  }
@@ -72,25 +71,26 @@ function triggerModalShow(id) {
 					});
 					$('#upload-download').html("Downloading");
 				}
-			});
-			
-			$('#upload-upload').on('click', function() {
-				var name = $('#upload-name').val();
+			});			
+		}	
+		
+		if(id == "listVideoModal") {
+			$('#video-up').on('click', function() {
+				var name = $('#video-name').val();
+				var file = $('#video-file').val();
 				if(name == null || name == "") {
 					alert('Input Cannot Be Empty');
 				}else {
 					var checkedList = getAllCheckedbox();
-					var json = {indexes:checkedList, type:'upload', name: name};
+					var json = {indexes:checkedList, type:'upload', name: name, file: file};
 					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
 						  $('#logging-uploadVideoModal').empty();
 						  $('#logging-uploadVideoModal').append(response);
 					});
 				}
 			});
-			
-			
-			$('#upload-upload').hide();
-		}	
+		}
+		
 	});
 }
 

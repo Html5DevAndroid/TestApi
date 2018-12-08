@@ -58,6 +58,7 @@
 			triggerModalShow('playlistModal');
 			triggerModalShow('subscribeModal');
 			triggerModalShow('uploadVideoModal');
+			triggerModalShow('listVideoModal');
 			
 			triggerRemoveChannel();
 		});

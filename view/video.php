@@ -5,7 +5,7 @@ function video_view() {
 	array_splice($videos, 0, 2);
 	?>
 	
-	<label for="usr">Tên Youtube</label>
+	<label for="usr">Tên Youtube Video</label>
 	<br>
 	<input id="video-name" type="text" class="form-control">
 	<br>
@@ -21,9 +21,9 @@ function video_item($video) {
 	?>
 	
 	<div class="channel-row">
-		<button type="button" class="btn btn-warning">Up</button>
+		<button id="video-up" type="button" class="btn btn-warning">Up</button>
 		<span style="display:inline-block; width: 50px;"></span>
-		<p class="channel-p"><?php echo $video ?></p>
+		<p id="video-file" class="channel-p"><?php echo $video ?></p>
 		<br>
 	</div>
 	

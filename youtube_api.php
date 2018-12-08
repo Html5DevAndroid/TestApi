@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		
 		for($i=0; $i<count($arr); $i++) {
 			$token = $tokens[$arr[$i]];
-			upload_video($arr[$i], $token, $content->name);
+			upload_video($arr[$i], $token, $content->name, $content->file);
 		}
 	}
 	
@@ -150,7 +150,7 @@ function subscribe($stt, $token, $channel_id) {
 	}
 }
 
-function upload_video($stt, $token, $name) {
+function upload_video($stt, $token, $name, $file) {
 	$client = validate_token($stt, $token);
 	
 	try {
@@ -158,7 +158,7 @@ function upload_video($stt, $token, $name) {
 		$youtube = new Google_Service_YouTube($client);
 		
 		// REPLACE this value with the path to the file you are uploading.
-		$videoPath = './video/' . $name;
+		$videoPath = './video/' . $file;
 
 		// Create a snippet with title, description, tags and category ID
 		// Create an asset resource and set its snippet metadata and type.
