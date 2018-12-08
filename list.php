@@ -18,7 +18,18 @@ for($i=0; $i<count($tokens); $i++) {
 		update_json_channel($i, $token->name, json_encode($access_token));
 	}
 	
-	echo json_encode($token);
+	try {
+	
+		$youtube = new Google_Service_YouTube($client);
+		$channel = $youtube->channels->listChannels('snippet', array('mine' => true));
+		echo json_encode($channel);
+		echo '<br><br>';
+	
+	} catch (Google_Service_Exception $e) {
+        send_log($token->name, $e->getMessage());
+	} catch (Google_Exception $e) {
+        send_log($token->name, $e->getMessage());
+	}
 } 
 
 function send_log($name, $log) {
