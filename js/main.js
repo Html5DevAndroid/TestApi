@@ -100,6 +100,8 @@ function triggerModalShow(id) {
 				$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
 					if(response == 'ok') {
 						location.reload(true);
+					}else {
+						$('#logging-listVideoModal').append(response);
 					}
 				});
 			});

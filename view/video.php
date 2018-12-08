@@ -21,11 +21,21 @@ function video_item($video) {
 	?>
 	
 	<div class="channel-row">
-		<button id="video-up" type="button" class="btn btn-warning">Up</button>
-		<span style="display:inline-block; width: 50px;"></span>
-		<p id="video-file" class="channel-p"><?php echo $video ?></p>
-		<button id="remove-video-<?php echo $id ?>" type="button" class="close remove-video">&times;</button>
-		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-5">
+					<button id="video-up" type="button" class="btn btn-warning">Up</button>
+					<span style="display:inline-block; width: 50px;"></span>
+					<p id="video-file" class="channel-p"><?php echo $video ?></p>
+				</div>
+				<div class="col-xs-5">
+				</div>
+				<div class="col-xs-2">
+					<button id="remove-video-<?php echo $id ?>" type="button" class="close remove-video">&times;</button>
+				</div>
+				<br>
+			</div>
+		</div>
 	</div>
 	
 	<?php
