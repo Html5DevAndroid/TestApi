@@ -9,7 +9,9 @@ $client = create_google_client();
 $tokens = get_json_channel();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo 'dkm';
+    $content = json_decode(file_get_contents('php://input'));
+	
+	echo 'dkm';
 }
 
 function validate_token($stt, $token) {
