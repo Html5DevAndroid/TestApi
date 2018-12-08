@@ -69,7 +69,7 @@ function triggerModalShow(id) {
 						  $('#logging-uploadVideoModal').empty();
 						  $('#logging-uploadVideoModal').append(response);
 					});
-					$('#upload-download').html("Downloading");
+					$('#uploadVideoModal').modal('hide');
 				}
 			});			
 		}	
@@ -84,8 +84,8 @@ function triggerModalShow(id) {
 					var checkedList = getAllCheckedbox();
 					var json = {indexes:checkedList, type:'upload', name: name, file: file};
 					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-						  $('#logging-uploadVideoModal').empty();
-						  $('#logging-uploadVideoModal').append(response);
+						  $('#logging-listVideoModal').empty();
+						  $('#logging-listVideoModal').append(response);
 					});
 				}
 			});

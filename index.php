@@ -29,7 +29,7 @@
 	<div class="container">
 		<div class="row add-channel">
 			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addChannelModal">Add Channel</button>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadVideoModal">Upload Video</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadVideoModal">Get Video</button>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#listVideoModal">List Video</button>
 			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#playlistModal">Create Playlist</button>
 			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#subscribeModal">Subscribe Channel</button>
