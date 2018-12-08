@@ -11,7 +11,19 @@ $tokens = get_json_channel();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = json_decode(file_get_contents('php://input'));
 	
-	
+	if($content->type == 'playlist') {
+		$arr = $content->indexes;
+		if(count($arr) == 0) {
+			echo 'No Channel Selected';
+		}
+		
+		$pll = $content->playlist;
+		
+		for($i=0; $i<count($arr); $i++) {
+			$token = $tokens[$arr[$i]];
+			create_playlist($arr[$i], $token, $pll->title, $pll->description, $pll->videos);
+		}
+	}
 	
 	if($content->type == 'subscribe') {
 		$arr = $content->indexes;
@@ -25,7 +37,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 	}
 	
+	if($content->type == 'upload') {
+		$arr = $content->indexes;
+		if(count($arr) == 0) {
+			echo 'No Channel Selected';
+		}
+		
+		for($i=0; $i<count($arr); $i++) {
+			$token = $tokens[$arr[$i]];
+			upload_video($arr[$i], $token, $content->name, $content->file);
+		}
+	}
 	
+	if($content->type == 'remove-channel') {
+		delete_json_channel($content->id);
+		echo('ok');
+	}
+	
+	if($content->type == 'remove-video') {
+		if(unlink('./video/' . $content->file) {
+			echo('ok');
+		}else {
+			echo('error');
+		}
+	}
 }
 
 function validate_token($stt, $token) {
