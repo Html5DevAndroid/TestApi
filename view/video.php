@@ -13,18 +13,18 @@ function video_view() {
 	<?php 
 	
 	for($i=0; $i<count($videos); $i++) {		
-		video_item($videos[$i], $i);
+		video_item($videos[$i]);
 	}
 }
 
-function video_item($video, $id) {
+function video_item($video) {
 	?>
 	
 	<div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-1">
-					<button id="remove-video-<?php echo $id ?>" type="button" class="close remove-video">&times;</button>
+					<button id="<?php echo $video ?>" type="button" class="close remove-video">&times;</button>
 				</div>
 				<div class="col-xs-11 channel-row">
 					<button id="<?php echo $video ?>" type="button" class="btn btn-warning video-up">Up</button>
