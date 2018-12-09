@@ -84,6 +84,7 @@ function triggerModalShow(id) {
 						var arr = [];
 						arr.push(checkedList[i]);
 						var json = {indexes: arr, type:'upload', name: name, file: file};
+						alert(JSON.stringify(json));
 						$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
 							  $('#logging-listVideoModal').append(response);
 						});
