@@ -21,7 +21,10 @@ for($i=0; $i<count($tokens); $i++) {
 	try {
 	
 		$youtube = new Google_Service_YouTube($client);
-		$channel = $youtube->channels->listChannels('statistics', array('mine' => true));
+		$params = array('mine' => true);
+		$part = 'snippet,contentDetails,statistics';
+		$params = array_filter($params);
+		$channel = $youtube->channels->listChannels($part, $params);
 		echo json_encode($channel);
 		echo '<br><br>';
 	
