@@ -66,7 +66,8 @@ function triggerModalShow(id) {
 						  }
 					});
 					$('#upload-download').html("Downloading");
-					$('#logging-uploadVideoModal').append('Video is downloading to ' + window.location.origin + "/video/" + name);
+					var link = window.location.origin + "/video/" + name;
+					$('#logging-uploadVideoModal').append('Video is downloading to <a href="' + link + '">' + link + '</a>');
 				}
 			});			
 		}	
