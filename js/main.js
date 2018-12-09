@@ -80,8 +80,8 @@ function triggerModalShow(id) {
 				}else {
 					var checkedList = getAllCheckedbox();
 					
-					for(var i=0; i<checkedList.lenth; i++) {
-						var arr = [];
+					for(var i=0; i<checkedList.length; i++) {
+						var arr = new Array();
 						arr.push(checkedList[i]);
 						var json = {indexes: arr, type:'upload', name: name, file: file};
 						alert(JSON.stringify(json));
