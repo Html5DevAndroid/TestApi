@@ -22,10 +22,14 @@ for($i=0; $i<count($tokens); $i++) {
 	
 		$youtube = new Google_Service_YouTube($client);
 		$params = array('mine' => true);
-		$part = 'snippet,contentDetails,statistics';
+		$part = 'statistics,snippet';
 		$params = array_filter($params);
 		$channel = $youtube->channels->listChannels($part, $params);
-		echo json_encode($channel);
+		$items = $channel->getItems();
+		for($j=0; $j<count($items); $j++) {
+			echo $items[$j]->snippet->title . ' - ' . $items[$j]->id . ' : ' . json_encode($items[$j]->statistics);
+			echo '<br>';
+		}
 		echo '<br><br>';
 	
 	} catch (Google_Service_Exception $e) {
