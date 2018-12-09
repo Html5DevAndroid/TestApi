@@ -59,14 +59,14 @@ function triggerModalShow(id) {
 						name: name
 					}
 					$.post(window.location.origin + "/upload_handle.php", JSON.stringify(obj), function(response){ 
-						  if(response == 'ok') {
-							  $('#upload-download').html("Download");
-						  }else {
+						  if(response == 'error') {
 							  $('#upload-download').html("Download Failed");
+						  }else {
+							  $('#upload-download').html("Download");
 						  }
-						  $('#logging-uploadVideoModal').append(response);
 					});
-					$('#uploadVideoModal').modal('hide');
+					$('#upload-download').html("Downloading");
+					$('#logging-uploadVideoModal').append('Video is downloading to ' + window.location.origin + "/video/" + name);
 				}
 			});			
 		}	
