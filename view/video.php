@@ -5,7 +5,7 @@ function video_view() {
 	array_splice($videos, 0, 2);
 	?>
 	
-	<label for="usr">Tên Youtube Video</label>
+	<label for="usr">Tên Video Trên Youtube</label>
 	<br>
 	<input id="video-name" type="text" class="form-control">
 	<br>

@@ -3,7 +3,7 @@
 function subscribe_view() {
 	?>
 	
-	<label for="usr">Subscribe Channel ID</label>
+	<label for="usr">Channel Id của kênh cần sub</label>
 	<br>
 	<input id="subscribe-channel" type="text" class="form-control">
 	<br>

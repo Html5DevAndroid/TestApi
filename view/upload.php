@@ -3,11 +3,11 @@
 function upload_view() {
 	?>
 	
-	<label for="usr">Video Download Url</label>
+	<label for="usr">Video Download Url (Not Watch Url)</label>
 	<br>
 	<input id="upload-url" type="text" class="form-control">
 	<br>
-	<label for="usr">File Name (.mp4, .wmv)</label>
+	<label for="usr">Tên File (.mp4, .wmv) ? Không Reload cho đến khi down xong</label>
 	<br>
 	<input id="upload-name" type="text" class="form-control">
 	<br>
