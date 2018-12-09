@@ -165,7 +165,7 @@ function upload_video($stt, $token, $name, $file) {
 		// This example sets the video's title, description, keyword tags, and
 		// video category.
 		$snippet = new Google_Service_YouTube_VideoSnippet();
-		$snippet->setTitle($name);
+		$snippet->setTitle($name . '  ' . rand(1,1000));
 		$snippet->setDescription(date("Y-m-d H:i:s") . ' - ' . rand(1,1000));
 		//$snippet->setTags(array("tag1", "tag2"));
 
