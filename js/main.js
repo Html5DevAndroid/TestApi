@@ -26,7 +26,6 @@ function triggerModalShow(id) {
 					var checkedList = getAllCheckedbox();
 					var json = {indexes:checkedList, type:'playlist', playlist:pll};
 					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-						  $('#logging-playlistModal').empty();
 						  $('#logging-playlistModal').append(response);
 					});
 				}
@@ -42,7 +41,6 @@ function triggerModalShow(id) {
 					var checkedList = getAllCheckedbox();
 					var json = {indexes:checkedList, type:'subscribe', channel:channelID};
 					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-						  $('#logging-subscribeModal').empty();
 						  $('#logging-subscribeModal').append(response);
 					});
 				}
@@ -66,7 +64,6 @@ function triggerModalShow(id) {
 						  }else {
 							  $('#upload-download').html("Download Failed");
 						  }
-						  $('#logging-uploadVideoModal').empty();
 						  $('#logging-uploadVideoModal').append(response);
 					});
 					$('#uploadVideoModal').modal('hide');
@@ -82,11 +79,15 @@ function triggerModalShow(id) {
 					alert('Input Cannot Be Empty');
 				}else {
 					var checkedList = getAllCheckedbox();
-					var json = {indexes:checkedList, type:'upload', name: name, file: file};
-					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-						  $('#logging-listVideoModal').empty();
-						  $('#logging-listVideoModal').append(response);
-					});
+					
+					for(var i=0; i<checkedList.lenth; i++) {
+						var arr = [];
+						arr.push(checkedList[i]);
+						var json = {indexes: arr, type:'upload', name: name, file: file};
+						$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
+							  $('#logging-listVideoModal').append(response);
+						});
+					}
 				}
 			});			
 		}
