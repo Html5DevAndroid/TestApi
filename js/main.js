@@ -24,10 +24,14 @@ function triggerModalShow(id) {
 					alert('Input Cannot Be Empty');
 				}else {
 					var checkedList = getAllCheckedbox();
-					var json = {indexes:checkedList, type:'playlist', playlist:pll};
-					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-						  $('#logging-playlistModal').append(response);
-					});
+					for(var i=0; i<checkedList.length; i++) {
+						var arr = new Array();
+						arr.push(checkedList[i]);
+						var json = {indexes:arr, type:'playlist', playlist:pll};
+						$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
+							  $('#logging-playlistModal').append(response);
+						});
+					}
 				}
 			});
 		}	
@@ -39,10 +43,14 @@ function triggerModalShow(id) {
 					alert('Input Cannot Be Empty');
 				}else {
 					var checkedList = getAllCheckedbox();
-					var json = {indexes:checkedList, type:'subscribe', channel:channelID};
-					$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
-						  $('#logging-subscribeModal').append(response);
-					});
+					for(var i=0; i<checkedList.length; i++) {
+						var arr = new Array();
+						arr.push(checkedList[i]);
+						var json = {indexes:arr, type:'subscribe', channel:channelID};
+						$.post(window.location.origin + "/youtube_api.php", JSON.stringify(json), function(response){ 
+							  $('#logging-subscribeModal').append(response);
+						});	
+					}
 				}
 			});
 		}	
