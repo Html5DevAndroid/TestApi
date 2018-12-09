@@ -27,6 +27,8 @@ for($i=0; $i<count($tokens); $i++) {
 		$channel = $youtube->channels->listChannels($part, $params);
 		$items = $channel->getItems();
 		for($j=0; $j<count($items); $j++) {
+			echo $token->name;
+			echo '<br>';
 			echo $items[$j]->snippet->title . ' - ' . $items[$j]->id . ' : ' . json_encode($items[$j]->statistics);
 			echo '<br>';
 		}
